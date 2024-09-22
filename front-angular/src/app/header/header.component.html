@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" style="background-color: rgb(46, 46, 46);">
+  <span>My Shop</span>
+  <span class="space-buttons"></span>
+  <button *ngIf="!isLoggedIn()" routerLink="/login" mat-raised-button color="primary" style="background-color: green;">Login</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()" mat-raised-button color="warn">Logout</button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()" style="background-color: rgb(46, 46, 46);">
+  <button mat-raised-button routerLink="/" [class.selected]="isLinkActive('/')">Home</button>
+  <button *ngIf="!isAdmin()" mat-raised-button routerLink="/cart" [class.selected]="isLinkActive('/cart')">Cart</button>
+  <button *ngIf="!isAdmin()" mat-raised-button routerLink="/myOrders" [class.selected]="isLinkActive('/myOrders')">My Orders</button>
+  <button *ngIf="isAdmin()" mat-raised-button routerLink="/addNewProduct" [class.selected]="isLinkActive('/addNewProduct')">Add New Product</button>
+  <button *ngIf="isAdmin()" mat-raised-button routerLink="/showProductDetailes" [class.selected]="isLinkActive('/showProductDetailes')">Show All Products</button>
+  <button *ngIf="isAdmin()" mat-raised-button routerLink="/orderInformation" [class.selected]="isLinkActive('/orderInformation')">Orders</button>
+</mat-toolbar>

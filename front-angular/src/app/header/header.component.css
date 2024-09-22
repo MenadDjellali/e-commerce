@@ -1,0 +1,19 @@
+.space-buttons {
+    flex: 1 1 auto;
+}
+
+/* button:active {
+    background-color: red;
+} */
+
+button{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border: none;
+}
+
+button.selected {
+    background-color: green;
+    color: white;
+  }
+  
